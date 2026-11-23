@@ -2,7 +2,7 @@
 
 A dark Omarchy theme with clay-colored window borders, charcoal backgrounds and muted rose accents. It includes a Foot palette, an OldTale configuration for LazyVim, eza directory colors and four wallpapers.
 
-[![Terracotta’s default vinyl wallpaper](preview.png)](backgrounds/01-vinyl.png)
+[![Omarchy wordmark in terracotta on the vinyl wallpaper](.github/terracotta-vinyl.webp)](backgrounds/01-vinyl.png)
 
 ## Install on Omarchy
 
