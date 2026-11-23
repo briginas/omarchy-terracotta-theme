@@ -1,6 +1,6 @@
 # Terracotta
 
-A dark Omarchy theme with clay-colored window borders, charcoal backgrounds and muted rose accents. It includes a Foot palette, an OldTale configuration for LazyVim, eza directory colors and three 4K wallpapers (3840 × 2160).
+A dark Omarchy theme with clay-colored window borders, charcoal backgrounds and muted rose accents. It includes a Foot palette, a LazyVim integration for terracotta.nvim, eza directory colors and three 4K wallpapers (3840 × 2160).
 
 [![Vinyl wallpaper](preview.png)](backgrounds/00-vinyl.webp)
 
@@ -12,15 +12,15 @@ Install the desktop palette and wallpapers with the Omarchy theme installer. Bac
 omarchy theme install https://github.com/briginas/omarchy-terracotta-theme
 ```
 
-## OldTale for LazyVim
+## Neovim
 
-Omarchy generates a Neovim config for Git-installed themes. To enable Terracotta’s [OldTale](https://github.com/topazape/oldtale.nvim) highlights, install the [plugin spec](neovim.lua) in your LazyVim config after installing the desktop theme.
+[terracotta.nvim](https://github.com/briginas/terracotta.nvim) is the companion Neovim colorscheme, built on OldTale. Omarchy generates its own Neovim config for Git-installed themes. To follow the desktop theme in LazyVim, install the [plugin spec](neovim.lua) after installing the desktop theme.
 
 ```sh
 install -Dm644 ~/.config/omarchy/themes/terracotta/neovim.lua ~/.config/nvim/lua/plugins/theme_terracotta.lua
 ```
 
-Open Neovim and run `:echo g:colors_name` to check the active scheme. Terracotta selects `oldtale` and applies its TypeScript and TSX highlights. When you switch desktop themes, LazyVim follows the selected theme. Repeat the copy after updating the theme to pick up changes to the highlights.
+Open Neovim with the Terracotta desktop theme active and run `:echo g:colors_name`. It should print `terracotta`. Switching desktop themes lets LazyVim follow the new selection. Use `:Lazy update terracotta.nvim` to update the Neovim highlights.
 
 ## Foot, eza and icons
 
