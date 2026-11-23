@@ -26,6 +26,8 @@ Open Neovim with the Terracotta desktop theme active and run `:echo g:colors_nam
 
 The [Foot palette](foot.ini) uses `#4A4045` for the selection background and `#DFE1E5` for selected text. Omarchy generates its own Foot config for Git-installed themes.
 
+To use Terracotta’s sage (`#94C0A4`) for the Git branch, the modified-file dot and the `?` for untracked files, copy the settings from [starship-git.toml](starship-git.toml) into the matching sections of `~/.config/starship.toml`.
+
 [eza.yml](eza.yml) matches the folder colors in Neo-tree. To use it with eza, point `~/.config/eza/theme.yml` at `~/.local/state/omarchy/current/theme/eza.yml`.
 
 The desktop icon preference references Oldtale-Blue, a separately installed local icon theme based on Yaru-blue. The icon pack is a separate dependency.

@@ -1,0 +1,6 @@
+[git_branch]
+style = "italic bright-green"
+
+[git_status]
+modified = "[](bright-green) "
+untracked = "[?](bright-green) "
