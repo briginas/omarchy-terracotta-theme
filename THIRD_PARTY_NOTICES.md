@@ -70,5 +70,5 @@ SOFTWARE.
 
 ## Wallpaper
 
-Omarchy Rose is a recolor of the Omarchy Tokyo Night wallpaper (backgrounds/omarchy.webp).
+Omarchy Terra is a recolor of the Omarchy Tokyo Night wallpaper (backgrounds/omarchy.webp).
 https://github.com/basecamp/omarchy
