@@ -20,15 +20,6 @@ local highlights = {
     String = { fg = palette.green },
     Type = { fg = palette.sand },
 
-    ["@lsp.typemod.variable.defaultLibrary.typescript"] = { fg = palette.blue },
-    ["@lsp.typemod.variable.defaultLibrary.typescriptreact"] = { fg = palette.rose },
-    ["@character.special.typescript"] = { fg = palette.subtext },
-    ["@tag.attribute.tsx"] = { fg = palette.subtext },
-    ["@tag.builtin.tsx"] = { fg = palette.cyan },
-    ["@tag.tsx"] = { fg = palette.cyan },
-    ["@tag.delimiter.tsx"] = { fg = palette.cyan, bold = true },
-    ["@constant.tsx"] = { fg = palette.subtext },
-
     ["@lsp.typemod.variable.declaration.lua"] = { fg = palette.subtext },
     ["@lsp.type.variable.lua"] = { fg = palette.subtext },
     ["@punctuation.bracket.lua"] = { fg = palette.subtext },
@@ -49,8 +40,8 @@ local highlights = {
     NeoTreeDirectoryIcon = { fg = palette.folder },
 }
 
--- LSP uses the filetype suffix; Tree-sitter uses the parser name.
-local lsp = {
+-- TypeScript and TSX: LSP groups use the Neovim filetype.
+local typescript_lsp = {
     ["@lsp.type.method"] = palette.blue,
     ["@lsp.type.parameter"] = palette.subtext,
     ["@lsp.type.property"] = palette.rose,
@@ -67,11 +58,15 @@ local lsp = {
     ["@lsp.mod.defaultLibrary"] = palette.rose,
 }
 
-for group, color in pairs(lsp) do
+for group, color in pairs(typescript_lsp) do
     highlights[group .. ".typescript"] = { fg = color }
     highlights[group .. ".typescriptreact"] = { fg = color }
 end
 
+highlights["@lsp.typemod.variable.defaultLibrary.typescript"] = { fg = palette.blue }
+highlights["@lsp.typemod.variable.defaultLibrary.typescriptreact"] = { fg = palette.rose }
+
+-- Tree-sitter groups use the parser name.
 for _, group in ipairs({
     "@keyword.conditional.ternary",
     "@variable.member",
@@ -83,6 +78,13 @@ for _, group in ipairs({
     highlights[group .. ".typescript"] = { fg = palette.subtext }
     highlights[group .. ".tsx"] = { fg = palette.subtext }
 end
+
+highlights["@character.special.typescript"] = { fg = palette.subtext }
+highlights["@tag.attribute.tsx"] = { fg = palette.subtext }
+highlights["@tag.builtin.tsx"] = { fg = palette.cyan }
+highlights["@tag.tsx"] = { fg = palette.cyan }
+highlights["@tag.delimiter.tsx"] = { fg = palette.cyan, bold = true }
+highlights["@constant.tsx"] = { fg = palette.subtext }
 
 local function terracotta_active()
     local theme_file = vim.fn.expand("~/.local/state/omarchy/current/theme.name")
