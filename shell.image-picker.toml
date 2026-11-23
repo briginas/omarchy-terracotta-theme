@@ -1,0 +1,6 @@
+[image-picker]
+text = "#bcbec3"
+selected-border = "hyprland.active-border"
+selected-border-alpha = 0.7
+unselected-border = "#bcbec3"
+unselected-border-alpha = 0.28

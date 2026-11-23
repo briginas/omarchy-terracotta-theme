@@ -24,7 +24,7 @@ Open Neovim with the Terracotta desktop theme active and run `:echo g:colors_nam
 
 ## Foot, eza and icons
 
-The [Foot palette](foot.ini) uses `#4A4045` for the selection background and `#DFE1E5` for selected text. Omarchy generates its own Foot config for Git-installed themes.
+The [Foot palette](foot.ini) uses `#322E32` for the selection background and `#DFE1E5` for selected text. Omarchy generates its own Foot config for Git-installed themes.
 
 To use Terracotta’s sage (`#94C0A4`) for the Git branch, the modified-file dot and the `?` for untracked files, copy the settings from [starship-git.toml](starship-git.toml) into the matching sections of `~/.config/starship.toml`.
 
