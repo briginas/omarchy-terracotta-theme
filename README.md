@@ -6,27 +6,25 @@ A dark Omarchy theme with clay-colored window borders, charcoal backgrounds and 
 
 ## Install on Omarchy
 
-On a fresh setup, run the following to let VS Code and VS Code Insiders keep their own themes while Terracotta is active. The links follow Omarchy’s active theme directory. If you already have a theme-sync preference, keep your existing setting.
-
-```sh
-toggles="$HOME/.local/state/omarchy/toggles"
-mkdir -p "$toggles"
-for flag in skip-vscode-theme-changes skip-vscode-insiders-theme-changes; do
-  if [ ! -e "$toggles/$flag" ] && [ ! -L "$toggles/$flag" ]; then
-    ln -s ../current/theme/skip-vscode-theme-changes "$toggles/$flag"
-  fi
-done
-```
-
 Install the desktop palette and wallpapers with the Omarchy theme installer. Back up any existing local theme named `terracotta` first, as the installer replaces that directory.
 
 ```sh
 omarchy theme install https://github.com/briginas/omarchy-terracotta-theme
 ```
 
-## Foot, LazyVim and icons
+## OldTale for LazyVim
 
-Omarchy generates terminal and Neovim configs for Git-installed themes. The exact local customizations are included as [foot.ini](foot.ini) and [neovim.lua](neovim.lua) for review and use in your own configuration. Foot uses `#4A4045` for the selection background and `#DFE1E5` for selected text. The LazyVim plugin spec configures [OldTale](https://github.com/topazape/oldtale.nvim) and includes distinct LSP highlights for TypeScript and TSX.
+Omarchy generates a Neovim config for Git-installed themes. To enable Terracotta’s [OldTale](https://github.com/topazape/oldtale.nvim) highlights, install the [plugin spec](neovim.lua) in your LazyVim config after installing the desktop theme.
+
+```sh
+install -Dm644 ~/.config/omarchy/themes/terracotta/neovim.lua ~/.config/nvim/lua/plugins/theme_terracotta.lua
+```
+
+Open Neovim and run `:echo g:colors_name` to check the active scheme. Terracotta selects `oldtale` and applies its TypeScript and TSX highlights. When you switch desktop themes, LazyVim follows the selected theme. Repeat the copy after updating the theme to pick up changes to the highlights.
+
+## Foot, eza and icons
+
+The [Foot palette](foot.ini) uses `#4A4045` for the selection background and `#DFE1E5` for selected text. Omarchy generates its own Foot config for Git-installed themes.
 
 [eza.yml](eza.yml) matches the folder colors in Neo-tree. To use it with eza, point `~/.config/eza/theme.yml` at `~/.local/state/omarchy/current/theme/eza.yml`.
 
