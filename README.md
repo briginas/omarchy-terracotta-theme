@@ -1,6 +1,6 @@
 # Terracotta
 
-A dark Omarchy theme with clay-colored window borders, charcoal backgrounds and muted rose accents. It includes a Foot palette, a LazyVim integration for terracotta.nvim, eza directory colors and three 4K wallpapers (3840 × 2160).
+A dark Omarchy theme with clay-colored window borders, charcoal backgrounds and muted rose accents. It includes a Foot palette, a LazyVim integration for terracotta.nvim, eza directory colors and four 4K wallpapers (3840 × 2160).
 
 [![Vinyl wallpaper](preview.png)](backgrounds/00-vinyl.webp)
 
