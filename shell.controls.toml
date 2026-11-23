@@ -1,0 +1,27 @@
+[controls]
+normal-color = "#bcbec3"
+normal-fill-alpha = 0.04
+normal-border = "#bcbec3"
+normal-border-width = 1
+normal-border-alpha = 0.4
+
+hover-cursor-color = "#bcbec3"
+hover-cursor-fill-alpha = 0.08
+hover-cursor-border = "#bcbec3"
+hover-cursor-border-width = 1
+hover-cursor-border-alpha = 0.25
+
+focus-color = "#bcbec3"
+focus-fill-alpha = 0.08
+focus-border = "#bcbec3"
+focus-border-width = 1
+focus-border-alpha = 0.25
+
+selected-color = "#AD6866"
+selected-fill-alpha = 0.32
+selected-border = "#bcbec3"
+selected-border-width = 0
+selected-border-alpha = 1.0
+
+pressed-fill-alpha = 0.22
+selection-fill-alpha = 0.35
