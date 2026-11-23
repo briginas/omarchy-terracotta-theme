@@ -1,0 +1,73 @@
+# Match the default foreground of the Terracotta terminal.
+punctuation: &text {foreground: "#B4B1BA"}
+date: *text
+symlink_path: *text
+control_char: *text
+broken_symlink: *text
+broken_path_overlay: *text
+
+filekinds:
+  directory: &folder {foreground: "#D77370", is_bold: true}
+  mount_point: *folder
+  normal: *text
+  symlink: *text
+  pipe: *text
+  block_device: *text
+  char_device: *text
+  socket: *text
+  special: *text
+  executable: *text
+
+perms:
+  user_read: *text
+  user_write: *text
+  user_execute_file: *text
+  user_execute_other: *text
+  group_read: *text
+  group_write: *text
+  group_execute: *text
+  other_read: *text
+  other_write: *text
+  other_execute: *text
+  special_user_file: *text
+  special_other: *text
+  attribute: *text
+
+size:
+  major: *text
+  minor: *text
+  number_byte: *text
+  number_kilo: *text
+  number_mega: *text
+  number_giga: *text
+  number_huge: *text
+  unit_byte: *text
+  unit_kilo: *text
+  unit_mega: *text
+  unit_giga: *text
+  unit_huge: *text
+
+users:
+  user_you: *text
+  user_root: *text
+  user_other: *text
+  group_yours: *text
+  group_other: *text
+  group_root: *text
+
+links:
+  normal: *text
+  multi_link_file: *text
+
+file_type:
+  image: *text
+  video: *text
+  music: *text
+  lossless: *text
+  crypto: *text
+  document: *text
+  compressed: *text
+  temp: *text
+  compiled: *text
+  build: *text
+  source: *text

@@ -1,0 +1,98 @@
+local palette = {
+    subtext = "#aaa7b0",
+    purple = "#9a8dbf",
+    green = "#799f8a",
+    blue = "#8292c7",
+    cyan = "#3f9185",
+    rose = "#c56584",
+    clay = "#bf7c76",
+    sand = "#cc9c86",
+    info = "#4F9EAA",
+    border = "#AD6866",
+    folder = "#D77370",
+    hidden_file = "#89868F",
+}
+
+local highlights = {
+    Number = { fg = palette.purple },
+    Keyword = { fg = palette.clay },
+    Special = { fg = palette.clay },
+    String = { fg = palette.green },
+    Type = { fg = palette.sand },
+
+    ["@lsp.typemod.variable.defaultLibrary.typescript"] = { fg = palette.blue },
+    ["@lsp.typemod.variable.defaultLibrary.typescriptreact"] = { fg = palette.rose },
+    ["@character.special.typescript"] = { fg = palette.subtext },
+    ["@tag.attribute.tsx"] = { fg = palette.subtext },
+    ["@tag.builtin.tsx"] = { fg = palette.cyan },
+    ["@tag.tsx"] = { fg = palette.cyan },
+    ["@tag.delimiter.tsx"] = { fg = palette.cyan, bold = true },
+    ["@constant.tsx"] = { fg = palette.subtext },
+
+    ["@lsp.typemod.variable.declaration.lua"] = { fg = palette.subtext },
+    ["@lsp.type.variable.lua"] = { fg = palette.subtext },
+    ["@punctuation.bracket.lua"] = { fg = palette.subtext },
+
+    DiagnosticUnderlineWarn = { underline = true, sp = palette.subtext },
+    DiagnosticInfo = { fg = palette.info, bg = "none", bold = true },
+    LualineNormalMode = { bg = palette.border },
+    NoiceCmdlinePopupBorder = { fg = palette.border, bold = true },
+    NoiceCmdlineIconCmdline = { link = "NoiceCmdlinePopupBorder" },
+    SnacksNotifierBorderInfo = { fg = palette.border, bold = true },
+    SnacksNotifierTitleInfo = { link = "SnacksNotifierBorderInfo" },
+    SnacksNotifierIconInfo = { link = "SnacksNotifierBorderInfo" },
+    SnacksNotifierBorderWarn = { fg = palette.border },
+    SnacksNotifierTitleWarn = { link = "SnacksNotifierBorderWarn" },
+    NeoTreeHiddenDirectory = { fg = palette.border },
+    NeoTreeHiddenFile = { fg = palette.hidden_file },
+    NeoTreeDirectoryName = { fg = palette.folder },
+    NeoTreeDirectoryIcon = { fg = palette.folder },
+}
+
+-- LSP uses the filetype suffix; Tree-sitter uses the parser name.
+local lsp = {
+    ["@lsp.type.method"] = palette.blue,
+    ["@lsp.type.parameter"] = palette.subtext,
+    ["@lsp.type.property"] = palette.rose,
+    ["@lsp.typemod.type.defaultLibrary"] = palette.sand,
+    ["@lsp.typemod.parameter.declaration"] = palette.subtext,
+    ["@lsp.typemod.variable.readonly"] = palette.subtext,
+    ["@lsp.typemod.function.readonly"] = palette.blue,
+    ["@lsp.typemod.function.declaration"] = palette.subtext,
+    ["@lsp.typemod.function.defaultLibrary"] = palette.blue,
+    ["@lsp.typemod.method.defaultLibrary"] = palette.blue,
+    ["@lsp.typemod.method.declaration"] = palette.blue,
+    ["@lsp.typemod.class.defaultLibrary"] = palette.purple,
+    ["@lsp.typemod.interface.defaultLibrary"] = palette.sand,
+    ["@lsp.mod.defaultLibrary"] = palette.rose,
+}
+
+for group, color in pairs(lsp) do
+    highlights[group .. ".typescript"] = { fg = color }
+    highlights[group .. ".typescriptreact"] = { fg = color }
+end
+
+for _, group in ipairs({
+    "@keyword.conditional.ternary",
+    "@variable.member",
+    "@variable",
+    "@punctuation.bracket",
+    "@punctuation.special",
+    "@punctuation.delimiter",
+}) do
+    highlights[group .. ".typescript"] = { fg = palette.subtext }
+    highlights[group .. ".tsx"] = { fg = palette.subtext }
+end
+
+return {
+    {
+        "topazape/oldtale.nvim",
+        name = "oldtale.nvim",
+        priority = 1000,
+        opts = { highlight_overrides = highlights },
+    },
+    {
+        "LazyVim/LazyVim",
+        opts = { colorscheme = "oldtale" },
+    },
+}
