@@ -6,10 +6,17 @@ A dark Omarchy theme with clay-colored window borders, charcoal backgrounds and 
 
 ## Install on Omarchy
 
-Install the desktop palette and wallpapers with the Omarchy theme installer. Back up any existing local theme named `terracotta` first, as the installer replaces that directory.
+Install the desktop palette, wallpapers and folder artwork with the Omarchy theme installer. Back up any existing local theme named `terracotta` first, as the installer replaces that directory.
 
 ```sh
 omarchy theme install https://github.com/briginas/omarchy-terracotta-theme
+```
+
+After the first install, register the bundled folder icons with GTK. The link follows future updates to the installed theme.
+
+```sh
+mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/icons"
+ln -sT "$HOME/.config/omarchy/themes/terracotta/icons/Oldtale-Terracotta" "${XDG_DATA_HOME:-$HOME/.local/share}/icons/Oldtale-Terracotta"
 ```
 
 ## Neovim
@@ -24,7 +31,7 @@ To use Terracotta’s sage (`#94C0A4`) for the Git branch, the modified-file dot
 
 [eza.yml](eza.yml) matches the folder colors in Neo-tree. To use it with eza, point `~/.config/eza/theme.yml` at `~/.local/state/omarchy/current/theme/eza.yml`.
 
-The desktop icon preference references Oldtale-Blue, a separately installed local icon theme based on Yaru-blue. The icon pack is a separate dependency.
+Nautilus folders use the same terracotta (`#AD6866`) as the active window border. The bundled Oldtale-Terracotta icons inherit the remaining icons from Yaru-blue, provided by the Arch package `yaru-icon-theme`.
 
 ## Credits
 

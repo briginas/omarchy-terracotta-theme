@@ -1,7 +1,6 @@
 # Third-Party Notices
 
-This extension includes substantial portions adapted from the following
-third-party projects. Each upstream project is licensed under the MIT License.
+The palette includes portions adapted from the following MIT-licensed projects.
 The notices below satisfy the MIT requirement to include copyright and
 permission notices for substantial portions of the Software.
 
@@ -72,3 +71,12 @@ SOFTWARE.
 
 Omarchy Terra is a recolor of the Omarchy Tokyo Night wallpaper (backgrounds/omarchy.webp).
 https://github.com/basecamp/omarchy
+
+## Folder icons
+
+The PNG artwork in `icons/Oldtale-Terracotta/` is adapted from Yaru-blue
+through the Oldtale Blue recolor. This theme changes the folder color to
+`#AD6866`. The artwork by the Yaru and Suru contributors and these recolored
+versions are licensed under [Creative Commons Attribution-ShareAlike 4.0
+International](https://creativecommons.org/licenses/by-sa/4.0/).
+See the [Yaru project and artwork credits](https://github.com/ubuntu/yaru#copying-or-reusing).
