@@ -32,6 +32,7 @@ fi
 patch -d "$plugin" -p1 --forward < "$world_clock/daylight-marker.patch"
 install -Dm644 "$world_clock/shell.elsewhen.toml.tpl" "$HOME/.config/omarchy/themed/shell.elsewhen.toml.tpl"
 omarchy theme set terracotta
+omarchy restart shell
 ```
 
 ## Neovim
