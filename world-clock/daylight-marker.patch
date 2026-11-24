@@ -1,0 +1,7 @@
+--- a/CityRow.qml
++++ b/CityRow.qml
+@@ -350,3 +350,3 @@
+     fainter: row.fainter
+-    daylightMarker: row.panel.daylightMarker
++    daylightMarker: Commons.Color.pick("elsewhen.daylight-marker", row.panel.daylightMarker)
+     fontFamily: row.fontFamily

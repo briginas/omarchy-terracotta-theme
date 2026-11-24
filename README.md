@@ -19,6 +19,21 @@ mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/icons"
 ln -sT "$HOME/.config/omarchy/themes/terracotta/icons/Oldtale-Terracotta" "${XDG_DATA_HOME:-$HOME/.local/share}/icons/Oldtale-Terracotta"
 ```
 
+## World Clock
+
+The Elsewhen city slider can use the active palette’s `orange` color (`#CC9C86` in Terracotta). Its day and night track already follows the foreground color. To enable the slider color, run this once after installing the theme:
+
+```sh
+world_clock="$HOME/.config/omarchy/themes/terracotta/world-clock"
+plugin="$HOME/.config/omarchy/plugins/$(id -un).elsewhen"
+if [ ! -d "$plugin" ]; then
+  omarchy plugin clone omarchy.elsewhen
+fi
+patch -d "$plugin" -p1 --forward < "$world_clock/daylight-marker.patch"
+install -Dm644 "$world_clock/shell.elsewhen.toml.tpl" "$HOME/.config/omarchy/themed/shell.elsewhen.toml.tpl"
+omarchy theme set terracotta
+```
+
 ## Neovim
 
 A matching Neovim colorscheme is available separately as [terracotta.nvim](https://github.com/briginas/terracotta.nvim).
